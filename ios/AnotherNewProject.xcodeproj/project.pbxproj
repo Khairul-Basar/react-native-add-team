@@ -114,7 +114,6 @@
 				2F4EB544A10906315FF45715 /* Pods-AnotherNewProject-AnotherNewProjectTests.debug.xcconfig */,
 				73E6EF1F104A36AB5E40100F /* Pods-AnotherNewProject-AnotherNewProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -485,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3BD7QZD2A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = AnotherNewProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3BD7QZD2A;
 				INFOPLIST_FILE = AnotherNewProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
