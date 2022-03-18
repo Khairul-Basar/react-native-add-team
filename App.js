@@ -8,16 +8,14 @@ import { Icon } from 'react-native-elements'
 
 import AddTeam from './src/screens/AddTeam/AddTeam'
 import BickTeam from './src/screens/BickTeam/BickTeam'
+import BasketBall from './src/screens/BasketBall/BasketBall'
 
 export default function App() {
   return (
     <ImageBackground
       source={require('./assets/backgroundSoccer.png')}
-      style={styles.container}
-    >
-      <TouchableOpacity onPress={() => console.log('a')}>
-        <Icon name="heart" type="font-awesome" color="white" size={54} />
-      </TouchableOpacity>
+      style={styles.container}>
+      <BasketBall />
     </ImageBackground>
   )
 }
@@ -25,7 +23,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 })
