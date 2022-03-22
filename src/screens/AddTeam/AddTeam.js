@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
 import {
   SafeAreaView,
   View,
@@ -7,17 +7,17 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-} from 'react-native';
+} from 'react-native'
 
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
-} from 'react-native-responsive-screen';
+} from 'react-native-responsive-screen'
 
 export default function AddTeam() {
-  const [teamLogoName, setTeamLogoName] = useState('New Brunswick Bears');
-  const [topPlayerName, setTopPlayerName] = useState('Jane245');
-  const [bottomPlayerName, setBottomPlayerName] = useState('Dan135');
+  const [teamLogoName, setTeamLogoName] = useState('New Brunswick Bears')
+  const [topPlayerName, setTopPlayerName] = useState('Jane245')
+  const [bottomPlayerName, setBottomPlayerName] = useState('Dan135')
 
   const teamLogo = [
     {
@@ -49,7 +49,7 @@ export default function AddTeam() {
       name: 'New Extrem Tiger',
       img: require('../../../assets/logoLion.png'),
     },
-  ];
+  ]
 
   const players = [
     {
@@ -81,7 +81,7 @@ export default function AddTeam() {
       name: 'Jane239',
       img: require('../../../assets/asset6.png'),
     },
-  ];
+  ]
 
   return (
     <SafeAreaView style={styles.topContainer}>
@@ -181,7 +181,7 @@ export default function AddTeam() {
         </TouchableOpacity>
       </View>
     </SafeAreaView>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -294,4 +294,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 25,
   },
-});
+})
+
+// <ImageBackground
+//       source={require('./assets/backgroundSoccer.png')}
+//       style={styles.container}></ImageBackground>

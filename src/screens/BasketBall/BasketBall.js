@@ -31,15 +31,13 @@ export default function BasketBall() {
         </View>
         <TouchableOpacity
           onPress={() => console.log('a')}
-          style={styles.stopWatchContainer}
-        >
+          style={styles.stopWatchContainer}>
           <Icon name="clock-o" type="font-awesome" color="white" size={40} />
           <Text style={styles.stopWatchText}> : 10</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => console.log('a')}
-          style={styles.iconStyle}
-        >
+          style={styles.iconStyle}>
           <Icon name="wifi" type="font-awesome" color="white" size={35} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.iconStyle}>
@@ -125,8 +123,7 @@ export default function BasketBall() {
                 styles.logoBg,
                 { borderColor: team ? 'red' : 'goldenrod' },
               ]}
-              onPress={() => setTeam(!team)}
-            >
+              onPress={() => setTeam(!team)}>
               <Image
                 style={styles.logo}
                 source={require('../../../assets/hockeylogo.png')}
@@ -151,8 +148,7 @@ export default function BasketBall() {
                 styles.logoBg,
                 { borderColor: !team ? 'red' : 'goldenrod' },
               ]}
-              onPress={() => setTeam(!team)}
-            >
+              onPress={() => setTeam(!team)}>
               <Image
                 style={styles.logo}
                 source={require('../../../assets/hockeylogo.png')}
@@ -163,8 +159,7 @@ export default function BasketBall() {
               style={[
                 styles.logoText,
                 { textAlign: 'right', width: wp('15%') },
-              ]}
-            >
+              ]}>
               NEW YORK KICKS
             </Text>
           </View>
@@ -189,8 +184,7 @@ export default function BasketBall() {
         </View>
         <TouchableOpacity
           style={styles.bottomBtnImgBg}
-          onPress={() => console.log('s')}
-        >
+          onPress={() => console.log('s')}>
           <Icon name="bell" type="font-awesome" color="red" size={18} />
         </TouchableOpacity>
       </View>
