@@ -26,11 +26,16 @@ import TeamsScreen from './src/screens/help/Navigating/TeamsScreen'
 import PlayersScreen from './src/screens/help/Navigating/PlayersScreen'
 import Baseball from './src/screens/help/GamePlay/Baseball'
 import Soccer from './src/screens/help/GamePlay/Soccer'
+import Hockey from './src/screens/help/GamePlay/Hockey'
+import TournamentFirstPage from './src/screens/help/TournamentSetup/TournamentFirstPage'
+import TournamentSecondPage from './src/screens/help/TournamentSetup/TournamentSecondPage'
+import StarterKits from './src/screens/help/StarterKits/StarterKits'
+import Updates from './src/screens/help/Updates/Updates'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Soccer />
+      <Updates />
     </View>
   )
 }
