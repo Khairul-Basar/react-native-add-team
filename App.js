@@ -19,11 +19,12 @@ import { BackgroundImage } from 'react-native-elements/dist/config'
 import WelcomeScreen from './src/screens/help/Welcome/WelcomeScreen'
 import BasementSports from './src/screens/help/BasementSports/BasementSports'
 import GettingStart from './src/screens/help/GettingStart/GettingStart'
+import GettingStartedSec from './src/screens/help/GettingStart/GettingStartedSec'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <GettingStart />
+      <GettingStartedSec />
     </View>
   )
 }
