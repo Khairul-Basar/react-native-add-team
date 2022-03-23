@@ -12,7 +12,7 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function Updates() {
+export default function Updates({ navigation }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>

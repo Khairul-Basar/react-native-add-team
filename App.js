@@ -32,11 +32,29 @@ import TournamentSecondPage from './src/screens/help/TournamentSetup/TournamentS
 import StarterKits from './src/screens/help/StarterKits/StarterKits'
 import Updates from './src/screens/help/Updates/Updates'
 
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
+const Stack = createNativeStackNavigator()
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Updates />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      >
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+        <Stack.Screen name="StarterKits" component={StarterKits} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 

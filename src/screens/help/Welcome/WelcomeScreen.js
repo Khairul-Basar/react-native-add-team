@@ -12,7 +12,7 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
@@ -32,8 +32,9 @@ export default function WelcomeScreen() {
             source={require('../../../../assets/help/white-mockup.png')}
           />
           <TouchableOpacity
-            onPress={() => console.log('Next Clicked..!!!')}
-            style={styles.btnBg}>
+            onPress={() => navigate('StarterKits')}
+            style={styles.btnBg}
+          >
             <Text style={styles.btnText}>NEXT</Text>
           </TouchableOpacity>
         </View>
