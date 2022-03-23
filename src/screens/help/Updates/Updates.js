@@ -12,10 +12,21 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function Updates({ navigation }) {
+export default function Updates({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
+        <View style={styles.nav}>
+          <TouchableOpacity
+            onPress={() => navigate('StarterKits')}
+            style={styles.navBtn}>
+            <Text style={styles.navBtnText}>Back</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.navBtn}>
+            <Text style={styles.navBtnText}>close</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.imgContainer}>
           <Image
             style={styles.image}
@@ -58,7 +69,7 @@ export default function Updates({ navigation }) {
           </Text>
         </View>
         <TouchableOpacity
-          onPress={() => console.log('Clicked Button')}
+          onPress={() => navigate('WelcomeScreen')}
           style={styles.btn}>
           <Text style={styles.btnText}>Close</Text>
         </TouchableOpacity>
@@ -75,12 +86,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  menu: {
-    marginVertical: wp('3%'),
+  nav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
-  menuText: {
+  navBtn: {
+    backgroundColor: 'black',
+    paddingVertical: wp('1%'),
+    paddingHorizontal: wp('3%'),
+    borderRadius: wp('1%'),
+    opacity: 0.7,
+  },
+  navBtnText: {
     color: 'white',
-    textAlign: 'center',
+  },
+  navTitle: {
+    color: 'white',
     fontWeight: '700',
     fontSize: 16,
   },
@@ -143,7 +165,7 @@ const styles = StyleSheet.create({
   btn: {
     marginHorizontal: wp('5%'),
     backgroundColor: 'black',
-    marginTop: wp('40%'),
+    marginTop: wp('30%'),
     paddingVertical: wp('4%'),
     borderRadius: wp('8%'),
     opacity: 0.7,

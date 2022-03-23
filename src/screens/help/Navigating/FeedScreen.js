@@ -12,12 +12,20 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function FeedScreen() {
+export default function FeedScreen({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
-        <View style={styles.menu}>
-          <Text style={styles.menuText}>Navigating the menu</Text>
+        <View style={styles.nav}>
+          <TouchableOpacity
+            onPress={() => navigate('PlayScreen')}
+            style={styles.navBtn}>
+            <Text style={styles.navBtnText}>Back</Text>
+          </TouchableOpacity>
+          <Text style={styles.navTitle}>Navigating the menu</Text>
+          <TouchableOpacity style={styles.navBtn}>
+            <Text style={styles.navBtnText}>close</Text>
+          </TouchableOpacity>
         </View>
         <Text style={styles.title}>"Feed" Screen</Text>
 
@@ -33,7 +41,7 @@ export default function FeedScreen() {
         </View>
 
         <TouchableOpacity
-          onPress={() => console.log('Clicked Button')}
+          onPress={() => navigate('TeamsScreen')}
           style={styles.btn}>
           <Text style={styles.btnText}>NEXT</Text>
         </TouchableOpacity>
@@ -50,12 +58,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  menu: {
-    marginVertical: wp('3%'),
+  nav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: wp('5%'),
   },
-  menuText: {
+  navBtn: {
+    backgroundColor: 'black',
+    paddingVertical: wp('1%'),
+    paddingHorizontal: wp('3%'),
+    borderRadius: wp('1%'),
+    opacity: 0.7,
+  },
+  navBtnText: {
     color: 'white',
-    textAlign: 'center',
+  },
+  navTitle: {
+    color: 'white',
     fontWeight: '700',
     fontSize: 16,
   },

@@ -4,12 +4,12 @@ import {
   StyleSheet,
   TouchableOpacity,
   View,
+  Text,
 } from 'react-native'
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
-import { Icon } from 'react-native-elements'
 
 import AddTeam from './src/screens/AddTeam/AddTeam'
 import BickTeam from './src/screens/BickTeam/BickTeam'
@@ -34,26 +34,21 @@ import Updates from './src/screens/help/Updates/Updates'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import AhmadOne from './src/screens/Faq/AhmadOne'
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="StarterKits" component={StarterKits} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={styles.container}>
+      <AhmadOne />
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#93DB3C',
   },
 })

@@ -1,0 +1,25 @@
+;<NavigationContainer>
+  <Stack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}>
+    <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+    <Stack.Screen name="BasementSports" component={BasementSports} />
+    <Stack.Screen name="GettingStart" component={GettingStart} />
+    <Stack.Screen name="GettingStartedSec" component={GettingStartedSec} />
+    <Stack.Screen name="PlayScreen" component={PlayScreen} />
+    <Stack.Screen name="FeedScreen" component={FeedScreen} />
+    <Stack.Screen name="TeamsScreen" component={TeamsScreen} />
+    <Stack.Screen name="PlayersScreen" component={PlayersScreen} />
+    <Stack.Screen name="Baseball" component={Baseball} />
+    <Stack.Screen name="Soccer" component={Soccer} />
+    <Stack.Screen name="Hockey" component={Hockey} />
+    <Stack.Screen name="TournamentFirstPage" component={TournamentFirstPage} />
+    <Stack.Screen
+      name="TournamentSecondPage"
+      component={TournamentSecondPage}
+    />
+    <Stack.Screen name="StarterKits" component={StarterKits} />
+    <Stack.Screen name="Updates" component={Updates} />
+  </Stack.Navigator>
+</NavigationContainer>

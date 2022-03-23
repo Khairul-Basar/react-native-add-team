@@ -12,15 +12,23 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function BasementSports() {
+export default function BasementSports({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
-        <View style={styles.logoBg}>
+        <View style={styles.nav}>
+          <TouchableOpacity
+            onPress={() => navigate('WelcomeScreen')}
+            style={styles.navBtn}>
+            <Text style={styles.navBtnText}>Back</Text>
+          </TouchableOpacity>
           <Image
-            style={styles.logoStyle}
+            style={styles.navLogo}
             source={require('../../../../assets/logoSemiWhite.png')}
           />
+          <TouchableOpacity style={styles.navBtn}>
+            <Text style={styles.navBtnText}>close</Text>
+          </TouchableOpacity>
         </View>
         <Text style={styles.title}>
           With the Basement Sports app you can . . .
@@ -80,9 +88,11 @@ export default function BasementSports() {
           </Text>
         </View>
 
-        <View style={styles.btnContainer}>
+        <TouchableOpacity
+          onPress={() => navigate('GettingStart')}
+          style={styles.btnContainer}>
           <Text style={styles.btnText}>NEXT</Text>
-        </View>
+        </TouchableOpacity>
       </SafeAreaView>
     </View>
   )
@@ -96,10 +106,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  logoBg: {
+  nav: {
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: wp('7%'),
   },
-  logoStyle: {
+  navBtn: {
+    backgroundColor: 'black',
+    paddingVertical: wp('1%'),
+    paddingHorizontal: wp('3%'),
+    borderRadius: wp('1%'),
+    opacity: 0.7,
+  },
+  navBtnText: {
+    color: 'white',
+  },
+  navLogo: {
     height: wp('13%'),
     width: wp('13%'),
     opacity: 0.2,

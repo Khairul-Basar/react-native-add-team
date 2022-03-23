@@ -12,12 +12,20 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function Hockey() {
+export default function Hockey({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
-        <View style={styles.menu}>
-          <Text style={styles.menuText}>Game Play: Hockey</Text>
+        <View style={styles.nav}>
+          <TouchableOpacity
+            onPress={() => navigate('Soccer')}
+            style={styles.navBtn}>
+            <Text style={styles.navBtnText}>Back</Text>
+          </TouchableOpacity>
+          <Text style={styles.navTitle}>Game Play: Hockey</Text>
+          <TouchableOpacity style={styles.navBtn}>
+            <Text style={styles.navBtnText}>close</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.textContainer}>
@@ -54,7 +62,7 @@ export default function Hockey() {
             source={require('../../../../assets/help/hockeyGameEngine-mockup.png')}
           />
           <TouchableOpacity
-            onPress={() => console.log('Next Clicked..!!!')}
+            onPress={() => navigate('TournamentFirstPage')}
             style={styles.btnBg}>
             <Text style={styles.btnText}>NEXT</Text>
           </TouchableOpacity>
@@ -72,12 +80,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  menu: {
-    marginVertical: wp('3%'),
+  nav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: wp('7%'),
   },
-  menuText: {
+  navBtn: {
+    backgroundColor: 'black',
+    paddingVertical: wp('1%'),
+    paddingHorizontal: wp('3%'),
+    borderRadius: wp('1%'),
+    opacity: 0.7,
+  },
+  navBtnText: {
     color: 'white',
-    textAlign: 'center',
+  },
+  navTitle: {
+    color: 'white',
     fontWeight: '700',
     fontSize: 16,
   },

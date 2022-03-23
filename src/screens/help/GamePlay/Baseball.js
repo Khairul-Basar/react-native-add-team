@@ -12,12 +12,20 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function Baseball() {
+export default function Baseball({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
-        <View style={styles.menu}>
-          <Text style={styles.menuText}>Game Play: Baseball</Text>
+        <View style={styles.nav}>
+          <TouchableOpacity
+            onPress={() => navigate('PlayersScreen')}
+            style={styles.navBtn}>
+            <Text style={styles.navBtnText}>Back</Text>
+          </TouchableOpacity>
+          <Text style={styles.navTitle}>Game Play: Baseball</Text>
+          <TouchableOpacity style={styles.navBtn}>
+            <Text style={styles.navBtnText}>close</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.textContainer}>
@@ -53,7 +61,7 @@ export default function Baseball() {
             source={require('../../../../assets/help/baseballGameEngine-mockup.png')}
           />
           <TouchableOpacity
-            onPress={() => console.log('Next Clicked..!!!')}
+            onPress={() => navigate('Soccer')}
             style={styles.btnBg}>
             <Text style={styles.btnText}>NEXT</Text>
           </TouchableOpacity>
@@ -71,12 +79,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  menu: {
-    marginVertical: wp('3%'),
+  nav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: wp('5%'),
   },
-  menuText: {
+  navBtn: {
+    backgroundColor: 'black',
+    paddingVertical: wp('1%'),
+    paddingHorizontal: wp('3%'),
+    borderRadius: wp('1%'),
+    opacity: 0.7,
+  },
+  navBtnText: {
     color: 'white',
-    textAlign: 'center',
+  },
+  navTitle: {
+    color: 'white',
     fontWeight: '700',
     fontSize: 16,
   },

@@ -32,9 +32,8 @@ export default function WelcomeScreen({ navigation: { navigate } }) {
             source={require('../../../../assets/help/white-mockup.png')}
           />
           <TouchableOpacity
-            onPress={() => navigate('StarterKits')}
-            style={styles.btnBg}
-          >
+            onPress={() => navigate('BasementSports')}
+            style={styles.btnBg}>
             <Text style={styles.btnText}>NEXT</Text>
           </TouchableOpacity>
         </View>
