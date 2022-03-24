@@ -12,17 +12,17 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function Soccer({ navigation: { navigate } }) {
+export default function Baseball({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
         <View style={styles.nav}>
           <TouchableOpacity
-            onPress={() => navigate('Baseball')}
+            onPress={() => navigate('PlayersScreen')}
             style={styles.navBtn}>
             <Text style={styles.navBtnText}>Back</Text>
           </TouchableOpacity>
-          <Text style={styles.navTitle}>Game Play: Soccer</Text>
+          <Text style={styles.navTitle}>Game Play: Baseball</Text>
           <TouchableOpacity style={styles.navBtn}>
             <Text style={styles.navBtnText}>close</Text>
           </TouchableOpacity>
@@ -31,38 +31,37 @@ export default function Soccer({ navigation: { navigate } }) {
         <View style={styles.textContainer}>
           <View style={styles.textPoint}></View>
           <Text style={styles.text}>
-            Use "Goal" buttons to keep track of goals scored in real-world game
-            play.
-          </Text>
-        </View>
-        <View style={styles.textContainer}>
-          <View style={styles.textPoint}></View>
-          <Text style={styles.text}>Easily start and stop clock.</Text>
-        </View>
-        <View style={styles.textContainer}>
-          <View style={styles.textPoint}></View>
-          <Text style={styles.text}>
-            Toggle between your choice of soundscape for meximum immersion or
-            mute sound effects completely if desired.
+            Keep virtual score for real-world game play, tracking Runs, Balls,
+            Strikes and Outs.
           </Text>
         </View>
         <View style={styles.textContainer}>
           <View style={styles.textPoint}></View>
           <Text style={styles.text}>
-            Select "Foul" and award penalty kick to the appropriate team.
+            Team icons reflect positions of players on bases.(Hold down on a
+            given icon to remove that player from the base.)
           </Text>
         </View>
         <View style={styles.textContainer}>
           <View style={styles.textPoint}></View>
-          <Text style={styles.text}>Hit whistle button to stop clock.</Text>
+          <Text style={styles.text}>
+            Swipe left or right to toggle between different scoreboard layout
+            options.
+          </Text>
+        </View>
+        <View style={styles.textContainer}>
+          <View style={styles.textPoint}></View>
+          <Text style={styles.text}>
+            Toggle sound effects on and off according to preference.
+          </Text>
         </View>
         <View style={styles.imgContainer}>
           <Image
             style={styles.imgStyle}
-            source={require('../../../../assets/help/soccerGameEngine-mockup.png')}
+            source={require('../../../assets/faq/baseballGameEngine-mockup.png')}
           />
           <TouchableOpacity
-            onPress={() => navigate('Hockey')}
+            onPress={() => navigate('Soccer')}
             style={styles.btnBg}>
             <Text style={styles.btnText}>NEXT</Text>
           </TouchableOpacity>
@@ -84,7 +83,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: wp('7%'),
+    marginBottom: wp('5%'),
   },
   navBtn: {
     backgroundColor: 'black',

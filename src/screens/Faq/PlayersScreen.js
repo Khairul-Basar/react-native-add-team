@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   StyleSheet,
   TouchableOpacity,
@@ -12,41 +12,36 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function TournamentFirstPage({ navigation: { navigate } }) {
+export default function PlayersScreen({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
         <View style={styles.nav}>
           <TouchableOpacity
-            onPress={() => navigate('Hockey')}
+            onPress={() => navigate('TeamsScreen')}
             style={styles.navBtn}>
             <Text style={styles.navBtnText}>Back</Text>
           </TouchableOpacity>
-          <Text style={styles.navTitle}>Tournament Setup</Text>
+          <Text style={styles.navTitle}>Navigating the menu</Text>
           <TouchableOpacity style={styles.navBtn}>
             <Text style={styles.navBtnText}>close</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.textPara}>
-          <Text style={styles.text}>Step 1: Enter the tournament name.</Text>
-        </View>
+        <Text style={styles.title}>"Players" Screen</Text>
+
         <View style={styles.textPara}>
           <Text style={styles.text}>
-            Step 2: Add the desired number of teams to the tournament.
+            View all players you've created, along with their states and
+            records.
           </Text>
         </View>
+
         <View style={styles.imgContainer}>
-          <Image
-            source={require('../../../../assets/help/soccerTournament-mockup.png')}
-          />
-          <View style={styles.image}>
-            <Image
-              source={require('../../../../assets/help/addPlayers-mockup.png')}
-            />
-          </View>
+          <Image source={require('../../../assets/faq/players-mockup.png')} />
         </View>
+
         <TouchableOpacity
-          onPress={() => navigate('TournamentSecondPage')}
+          onPress={() => navigate('Baseball')}
           style={styles.btn}>
           <Text style={styles.btnText}>NEXT</Text>
         </TouchableOpacity>
@@ -67,7 +62,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: wp('7%'),
+    marginBottom: wp('5%'),
   },
   navBtn: {
     backgroundColor: 'black',
@@ -84,7 +79,13 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 16,
   },
-
+  title: {
+    marginVertical: wp('2%'),
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '700',
+  },
   textPara: {
     backgroundColor: '#313A4E',
     marginVertical: wp('2%'),
@@ -98,14 +99,9 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
   },
   imgContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    alignItems: 'center',
   },
-  image: {
-    height: wp('115%'),
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-  },
+
   btn: {
     marginHorizontal: wp('5%'),
     backgroundColor: 'black',

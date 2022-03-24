@@ -12,17 +12,17 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function Hockey({ navigation: { navigate } }) {
+export default function Soccer({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
         <View style={styles.nav}>
           <TouchableOpacity
-            onPress={() => navigate('Soccer')}
+            onPress={() => navigate('Baseball')}
             style={styles.navBtn}>
             <Text style={styles.navBtnText}>Back</Text>
           </TouchableOpacity>
-          <Text style={styles.navTitle}>Game Play: Hockey</Text>
+          <Text style={styles.navTitle}>Game Play: Soccer</Text>
           <TouchableOpacity style={styles.navBtn}>
             <Text style={styles.navBtnText}>close</Text>
           </TouchableOpacity>
@@ -59,10 +59,10 @@ export default function Hockey({ navigation: { navigate } }) {
         <View style={styles.imgContainer}>
           <Image
             style={styles.imgStyle}
-            source={require('../../../../assets/help/hockeyGameEngine-mockup.png')}
+            source={require('../../../assets/faq/soccerGameEngine-mockup.png')}
           />
           <TouchableOpacity
-            onPress={() => navigate('TournamentFirstPage')}
+            onPress={() => navigate('Hockey')}
             style={styles.btnBg}>
             <Text style={styles.btnText}>NEXT</Text>
           </TouchableOpacity>

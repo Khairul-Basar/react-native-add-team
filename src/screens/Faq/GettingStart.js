@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   StyleSheet,
   TouchableOpacity,
@@ -12,49 +12,50 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function StarterKits({ navigation: { navigate } }) {
+export default function GettingStart({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
         <View style={styles.nav}>
           <TouchableOpacity
-            onPress={() => navigate('TournamentSecondPage')}
+            onPress={() => navigate('BasementSports')}
             style={styles.navBtn}>
             <Text style={styles.navBtnText}>Back</Text>
           </TouchableOpacity>
-          <Text style={styles.navTitle}>The Starter Kits</Text>
+          <Image
+            style={styles.navLogo}
+            source={require('../../../assets/logoSemiWhite.png')}
+          />
           <TouchableOpacity style={styles.navBtn}>
             <Text style={styles.navBtnText}>close</Text>
           </TouchableOpacity>
         </View>
+        <Text style={styles.title}>Getting Started</Text>
         <View style={styles.textPara}>
           <Text style={styles.text}>
-            The app can be used on its own, to keep score on your freeform
-            Baseball,Soccer, or Hockey game . . .
+            Step 1: Create your profile by adding a name for your home field,
+            entering your age, and (if desired) a custom your username.
           </Text>
-
-          <Text style={[styles.text, { marginTop: wp('5%') }]}>
-            . . . or it can be used in combination with our Baseball Starter Kit
-            or 2-in-1 Soccer/Hockey Starter Kit.
-          </Text>
+        </View>
+        <View style={styles.textPara}>
+          <Text style={styles.text}>Step 2: Choose your avatar.</Text>
         </View>
         <View style={styles.imgContainer}>
-          <Image
-            style={styles.imgStyle}
-            source={require('../../../../assets/help/product-mockup.png')}
-          />
-          <View style={styles.btnContainer}>
-            <TouchableOpacity
-              onPress={() => navigate('Updates')}
-              style={styles.btnBg}>
-              <Text style={styles.btnText}>NEXT</Text>
-            </TouchableOpacity>
+          <Image source={require('../../../assets/faq/field-mockup.png')} />
+          <View style={styles.image}>
+            <Image source={require('../../../assets/faq/avatar-mockup.png')} />
           </View>
         </View>
+        <TouchableOpacity
+          onPress={() => navigate('GettingStartedSec')}
+          style={styles.btn}>
+          <Text style={styles.btnText}>NEXT</Text>
+        </TouchableOpacity>
       </SafeAreaView>
     </View>
   )
 }
+
 const styles = StyleSheet.create({
   bgContainer: {
     flex: 1,
@@ -68,7 +69,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: wp('7%'),
   },
   navBtn: {
     backgroundColor: 'black',
@@ -80,12 +80,18 @@ const styles = StyleSheet.create({
   navBtnText: {
     color: 'white',
   },
-  navTitle: {
-    color: 'white',
-    fontWeight: '700',
-    fontSize: 16,
+  navLogo: {
+    height: wp('13%'),
+    width: wp('13%'),
+    opacity: 0.2,
   },
-
+  title: {
+    marginVertical: wp('2%'),
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '700',
+  },
   textPara: {
     backgroundColor: '#313A4E',
     marginVertical: wp('2%'),
@@ -99,37 +105,26 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
   },
   imgContainer: {
-    alignItems: 'center',
-    position: 'relative',
-  },
-  btnContainer: {
-    alignItems: 'center',
+    flexDirection: 'row',
     justifyContent: 'center',
-    width: wp('100%'),
-    position: 'absolute',
-    bottom: wp('5'),
-    shadowColor: '#191E26',
-    shadowOffset: {
-      width: 0,
-      height: wp('-18%'),
-    },
-    shadowOpacity: 2,
-    shadowRadius: wp('6%'),
-
-    elevation: 24,
   },
-  btnBg: {
+  image: {
+    height: wp('100%'),
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+  },
+  btn: {
+    marginHorizontal: wp('5%'),
     backgroundColor: 'black',
-    width: wp('75%'),
+    marginTop: wp('5%'),
     paddingVertical: wp('4%'),
-
     borderRadius: wp('8%'),
-    opacity: 0.95,
+    opacity: 0.7,
   },
   btnText: {
+    textAlign: 'center',
     color: 'white',
     fontWeight: 'bold',
     fontSize: 23,
-    textAlign: 'center',
   },
 })

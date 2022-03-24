@@ -12,13 +12,13 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function TeamsScreen({ navigation: { navigate } }) {
+export default function PlayScreen({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
         <View style={styles.nav}>
           <TouchableOpacity
-            onPress={() => navigate('FeedScreen')}
+            onPress={() => navigate('GettingStartedSec')}
             style={styles.navBtn}>
             <Text style={styles.navBtnText}>Back</Text>
           </TouchableOpacity>
@@ -27,20 +27,21 @@ export default function TeamsScreen({ navigation: { navigate } }) {
             <Text style={styles.navBtnText}>close</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.title}>"Teams" Screen</Text>
+        <Text style={styles.title}>"Play" Screen</Text>
 
         <View style={styles.textPara}>
           <Text style={styles.text}>
-            View all teams you've created, along with corresponding states.
+            Start a new Game, Series, or Tournament in the sports of your
+            choice.
           </Text>
         </View>
 
         <View style={styles.imgContainer}>
-          <Image source={require('../../../../assets/help/teams-mockup.png')} />
+          <Image source={require('../../../assets/faq/playTab-mockup.png')} />
         </View>
 
         <TouchableOpacity
-          onPress={() => navigate('PlayersScreen')}
+          onPress={() => navigate('FeedScreen')}
           style={styles.btn}>
           <Text style={styles.btnText}>NEXT</Text>
         </TouchableOpacity>
@@ -48,6 +49,7 @@ export default function TeamsScreen({ navigation: { navigate } }) {
     </View>
   )
 }
+
 const styles = StyleSheet.create({
   bgContainer: {
     flex: 1,

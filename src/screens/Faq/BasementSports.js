@@ -24,7 +24,7 @@ export default function BasementSports({ navigation: { navigate } }) {
           </TouchableOpacity>
           <Image
             style={styles.navLogo}
-            source={require('../../../../assets/logoSemiWhite.png')}
+            source={require('../../../assets/logoSemiWhite.png')}
           />
           <TouchableOpacity style={styles.navBtn}>
             <Text style={styles.navBtnText}>close</Text>
@@ -37,21 +37,21 @@ export default function BasementSports({ navigation: { navigate } }) {
           <View style={styles.imageBg}>
             <Image
               resizeMode={'contain'}
-              source={require('../../../../assets/help/soccer-mockup.png')}
+              source={require('../../../assets/faq/soccer-mockup.png')}
             />
           </View>
 
           <Image
             style={[styles.image, { width: wp('37%') }]}
             resizeMode={'contain'}
-            source={require('../../../../assets/help/baseball-mockup.png')}
+            source={require('../../../assets/faq/baseball-mockup.png')}
           />
 
           <View style={[styles.imageBg, { alignItems: 'flex-start' }]}>
             <Image
               style={[styles.image, { marginRight: wp('10%') }]}
               resizeMode={'contain'}
-              source={require('../../../../assets/help/hockey-mockup.png')}
+              source={require('../../../assets/faq/hockey-mockup.png')}
             />
           </View>
         </View>

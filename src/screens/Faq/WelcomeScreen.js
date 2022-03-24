@@ -19,7 +19,7 @@ export default function WelcomeScreen({ navigation: { navigate } }) {
         <View style={styles.logoBg}>
           <Image
             style={styles.logoStyle}
-            source={require('../../../../assets/logoSemiWhite.png')}
+            source={require('../../../assets/logoSemiWhite.png')}
           />
         </View>
         <Text style={styles.title}>WELCOME TO BASEMENT SPORTS</Text>
@@ -29,7 +29,7 @@ export default function WelcomeScreen({ navigation: { navigate } }) {
         <View style={styles.imgContainer}>
           <Image
             style={styles.imgStyle}
-            source={require('../../../../assets/help/white-mockup.png')}
+            source={require('../../../assets/faq/white-mockup.png')}
           />
           <TouchableOpacity
             onPress={() => navigate('BasementSports')}

@@ -30,7 +30,7 @@ export default function Updates({ navigation: { navigate } }) {
         <View style={styles.imgContainer}>
           <Image
             style={styles.image}
-            source={require('../../../../assets/logoSemiWhite.png')}
+            source={require('../../../assets/logoSemiWhite.png')}
           />
         </View>
         <View style={styles.card}>

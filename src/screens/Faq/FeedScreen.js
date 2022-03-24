@@ -12,56 +12,36 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
 
-export default function GettingStartedSec({ navigation: { navigate } }) {
+export default function FeedScreen({ navigation: { navigate } }) {
   return (
     <View style={styles.bgContainer}>
       <SafeAreaView style={styles.container}>
         <View style={styles.nav}>
           <TouchableOpacity
-            onPress={() => navigate('GettingStart')}
+            onPress={() => navigate('PlayScreen')}
             style={styles.navBtn}>
             <Text style={styles.navBtnText}>Back</Text>
           </TouchableOpacity>
-          <Image
-            style={styles.navLogo}
-            source={require('../../../../assets/logoSemiWhite.png')}
-          />
+          <Text style={styles.navTitle}>Navigating the menu</Text>
           <TouchableOpacity style={styles.navBtn}>
             <Text style={styles.navBtnText}>close</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.title}>Getting Started</Text>
+        <Text style={styles.title}>"Feed" Screen</Text>
+
         <View style={styles.textPara}>
           <Text style={styles.text}>
-            Step 3: Create your Baseball, Soccer and Hockey team.
+            View recent game results, and see what your fellow players have be
+            up to.
           </Text>
         </View>
+
         <View style={styles.imgContainer}>
-          <Image
-            resizeMode="contain"
-            style={{ zIndex: 1 }}
-            source={require('../../../../assets/help/team1-mockup.png')}
-          />
-          <Image
-            resizeMode="contain"
-            style={styles.image}
-            source={require('../../../../assets/help/team2-mockup.png')}
-          />
-          <Image
-            resizeMode="contain"
-            style={[
-              styles.image,
-              {
-                left: wp('-40%'),
-                zIndex: -1,
-                marginTop: wp('42%'),
-              },
-            ]}
-            source={require('../../../../assets/help/team3-mockup.png')}
-          />
+          <Image source={require('../../../assets/faq/feed-mockup.png')} />
         </View>
+
         <TouchableOpacity
-          onPress={() => navigate('PlayScreen')}
+          onPress={() => navigate('TeamsScreen')}
           style={styles.btn}>
           <Text style={styles.btnText}>NEXT</Text>
         </TouchableOpacity>
@@ -69,7 +49,6 @@ export default function GettingStartedSec({ navigation: { navigate } }) {
     </View>
   )
 }
-
 const styles = StyleSheet.create({
   bgContainer: {
     flex: 1,
@@ -83,6 +62,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: wp('5%'),
   },
   navBtn: {
     backgroundColor: 'black',
@@ -94,16 +74,16 @@ const styles = StyleSheet.create({
   navBtnText: {
     color: 'white',
   },
-  navLogo: {
-    height: wp('13%'),
-    width: wp('13%'),
-    opacity: 0.2,
+  navTitle: {
+    color: 'white',
+    fontWeight: '700',
+    fontSize: 16,
   },
   title: {
     marginVertical: wp('2%'),
     textAlign: 'center',
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '700',
   },
   textPara: {
@@ -119,15 +99,9 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
   },
   imgContainer: {
-    flexDirection: 'row',
-    width: wp('100%'),
-    overflow: 'hidden',
-    marginTop: wp('5%'),
+    alignItems: 'center',
   },
-  image: {
-    left: wp('-22%'),
-    marginTop: wp('20%'),
-  },
+
   btn: {
     marginHorizontal: wp('5%'),
     backgroundColor: 'black',
