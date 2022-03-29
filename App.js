@@ -13,7 +13,7 @@ import {
 
 import AddTeam from './src/screens/AddTeam/AddTeam'
 import BickTeam from './src/screens/BickTeam/BickTeam'
-import BasketBall from './src/screens/BasketBall/BasketBall'
+import BasketBall from './src/screens/basketball/basketBallGame.screen'
 import AuthLogin from './src/screens/authLogin/AuthLogin'
 import { BackgroundImage } from 'react-native-elements/dist/config'
 import WelcomeScreen from './src/screens/Faq/WelcomeScreen'
@@ -34,40 +34,12 @@ import Updates from './src/screens/Faq/Updates'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import BasketBallSplashScreen from './src/screens/basketball/basketBallSplash.screen'
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-        <Stack.Screen name="BasementSports" component={BasementSports} />
-        <Stack.Screen name="GettingStart" component={GettingStart} />
-        <Stack.Screen name="GettingStartedSec" component={GettingStartedSec} />
-        <Stack.Screen name="PlayScreen" component={PlayScreen} />
-        <Stack.Screen name="FeedScreen" component={FeedScreen} />
-        <Stack.Screen name="TeamsScreen" component={TeamsScreen} />
-        <Stack.Screen name="PlayersScreen" component={PlayersScreen} />
-        <Stack.Screen name="Baseball" component={Baseball} />
-        <Stack.Screen name="Soccer" component={Soccer} />
-        <Stack.Screen name="Hockey" component={Hockey} />
-        <Stack.Screen
-          name="TournamentFirstPage"
-          component={TournamentFirstPage}
-        />
-        <Stack.Screen
-          name="TournamentSecondPage"
-          component={TournamentSecondPage}
-        />
-        <Stack.Screen name="StarterKits" component={StarterKits} />
-        <Stack.Screen name="Updates" component={Updates} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  )
+  return <BasketBallSplashScreen />
 }
 
 const styles = StyleSheet.create({
