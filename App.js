@@ -35,11 +35,12 @@ import Updates from './src/screens/Faq/Updates'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import BasketBallSplashScreen from './src/screens/basketball/basketBallSplash.screen'
+import FootballSplashScreen from './src/screens/football/footBallSplash.screen'
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
-  return <BasketBallSplashScreen />
+  return <FootballSplashScreen />
 }
 
 const styles = StyleSheet.create({

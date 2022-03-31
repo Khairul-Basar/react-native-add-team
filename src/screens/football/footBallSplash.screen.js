@@ -14,16 +14,17 @@ import {
 import { responsiveFontSize } from 'react-native-responsive-dimensions'
 import { Icon } from 'react-native-elements'
 
-export default function BasketBallSplashScreen() {
+export default function FootballSplashScreen() {
   return (
     <ImageBackground
       style={styles.container}
-      source={require('../../../assets/backgroundBasketBall.png')}>
+      source={require('../../../assets/backgroundSoccer.png')}>
       <TouchableOpacity
         style={styles.iconButton}
         onPress={() => console.log('clicked')}>
         <Icon name={'cross'} type={'entypo'} size={28} color={'white'} />
       </TouchableOpacity>
+
       <View style={styles.imgContainer}>
         <Image
           style={styles.img1}
@@ -37,7 +38,7 @@ export default function BasketBallSplashScreen() {
         />
       </View>
 
-      <Text style={styles.launchDateText}>Launch: Mar 2022</Text>
+      <Text style={styles.launchDateText}>Launch: June 2022</Text>
 
       <ImageBackground
         resizeMode="contain"
@@ -46,7 +47,7 @@ export default function BasketBallSplashScreen() {
         <View style={styles.left}>
           <Text style={styles.leftCardBaseText}>
             BASEMENT{'\n'}SPORTS{'\n'}
-            <Text style={styles.leftCardInnerText}>BASKETBALL</Text>
+            <Text style={styles.leftCardInnerText}>FOOTBALL</Text>
           </Text>
         </View>
 
